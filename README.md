@@ -99,6 +99,13 @@ This is an app for Vassar students to sell items to other Vassar students to kee
 | Property      | Type     | Description |
    | ------------- | -------- | ------------|
    | Name          | String   | Person using the app |
+   
+#### Post 
+
+| Property      | Type     | Description |
+   | ------------- | -------------- | ------------|
+   | user          | User           | Person using the app |
+   | image         | file data type | Image of the item being sold |
 
 ### Networking
 - [Add list of network requests by screen]
