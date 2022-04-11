@@ -87,6 +87,7 @@ This is an app for Vassar students to sell items to other Vassar students to kee
 <img src="https://imgur.com/nRsrw16.jpg" width=800><br>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="https://imgur.com/nRsrw16.jpg" width=800><br>
 
 ### [BONUS] Interactive Prototype
 
