@@ -107,7 +107,9 @@ This is an app for Vassar students to sell items to other Vassar students to kee
    | user          | User           | Person using the app |
    | image         | file data type | Image of the item being sold |
    | caption       | String         | description displayed of item under the image |
-   | 
+   | price         | double         | price the user sets for the item |
+   
+   
 
 ### Networking
 - [Add list of network requests by screen]
