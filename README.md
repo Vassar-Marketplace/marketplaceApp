@@ -108,7 +108,6 @@ This is an app for Vassar students to sell items to other Vassar students to kee
    | image         | file data type | Image of the item being sold |
    | caption       | String         | description displayed of item under the image |
    | price         | double         | price the user sets for the item |
-   | not
    
    
 
