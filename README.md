@@ -112,6 +112,85 @@ This is an app for Vassar students to sell items to other Vassar students to kee
    
 
 ### Networking
-- [Add list of network requests by screen]
-- [Create basic snippets for each Parse network request]
+- Home Feed Screen
+    - (Read/GET) Query all posts where user is author
+```
+let query = PFQuery(className:"Post")
+query.whereKey("author", equalTo: currentUser)
+query.order(byDescending: "createdAt")
+query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+   if let error = error { 
+      print(error.localizedDescription)
+   } else if let posts = posts {
+      print("Successfully retrieved \(posts.count) posts.")
+  // TODO: Do something with posts...
+   }
+}
+```
+
+- Profile Screen
+    - (Create/POST) Create a new post object
+```
+let post = posts[indexPath.section]
+        let comments =  (post["comments"] as? [PFObject]) ?? []
+        
+        
+        if indexPath.row == 0 {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+        
+        let user = post["author"] as! PFUser
+        
+        cell.usernameLabel.text = user.username
+        
+        cell.captionLabel.text = post["caption"] as! String
+        
+        let imageFile = post["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+        
+        cell.photoView.af_setImage(withURL: url)
+```
+
+    -(Read/GET) Show logged in user posts
+
+```
+let query = PFQuery(className:"Post")
+query.whereKey("author", equalTo: currentUser)
+query.order(byDescending: "createdAt")
+query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+   if let error = error { 
+      print(error.localizedDescription)
+   } else if let posts = posts {
+      print("Successfully retrieved \(posts.count) posts.")
+  // TODO: Do something with posts...
+   }
+}
+```
+
+- User Screen
+    - (Create/POST) Create a new follow to a user
+    - (Delete) Unfollowing an existing followed user
+    - (Read/GET) Created posts by user
+
+- Sign Up Screen
+    - (Create) New user on signup
+
+```
+let user = PFUser()
+        user.username = usernameField.text
+        user.password = passwordField.text
+        
+        user.signUpInBackground { (success, error) in
+            if success {
+                self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+            } else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+            }
+        }
+```
+
+- Message Screen
+    - (Read/GET) User messages
+    - (Update/PUT) Update conversation between users
+    - (Create) A new message
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
