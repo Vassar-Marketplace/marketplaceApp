@@ -2,11 +2,15 @@
 # platform :ios, '9.0'
 
 target 'Vassar MarketPlace' do
+
+ # Add Parse pods and install
+ 	pod 'Parse'
+ 	pod 'AlamofireImage'
+
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for Vassar MarketPlace
-	install Parse
 
   target 'Vassar MarketPlaceTests' do
     inherit! :search_paths

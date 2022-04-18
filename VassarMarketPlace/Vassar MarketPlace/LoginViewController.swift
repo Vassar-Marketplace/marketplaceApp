@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Parse
+//import Parse
 
 class LoginViewController: UIViewController {
 
