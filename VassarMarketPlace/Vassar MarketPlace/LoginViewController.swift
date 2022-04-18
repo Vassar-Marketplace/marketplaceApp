@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
 
@@ -18,6 +19,12 @@ class LoginViewController: UIViewController {
     
     
     
+    @IBAction func onSignIn(_ sender: Any) {
+        let username = usernameTextField.text!
+        let password = passwordTextField.text!
+        
+        
+    }
     
     
     
@@ -26,6 +33,7 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*
