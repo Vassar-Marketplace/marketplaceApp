@@ -1,51 +1,40 @@
 //
-//  LoginViewController.swift
+//  SignUpViewController.swift
 //  Vassar MarketPlace
 //
-//  Created by Karan Pandya on 4/18/22.
+//  Created by Karan Pandya on 4/23/22.
 //
 
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
-
-    @IBOutlet weak var logoImageView: UIImageView!
-
+class SignUpViewController: UIViewController {
+    
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
-    
-    @IBAction func onSignIn(_ sender: Any) {
-        let username = usernameTextField.text!
-        let password = passwordTextField.text!
+    @IBAction func onSignUp(_ sender: Any) {
+        let user = PFUser()
+        user.username = usernameTextField.text
+        user.password = passwordTextField.text
         
-        PFUser.logInWithUsername(inBackground: username, password: password) { (user,error) in
-            if user != nil{
+        user.signUpInBackground { (success, error) in
+            if success{
                 self.performSegue(withIdentifier: "FeedView", sender: nil)
-            } else {
+            } else{
                 print("Error: \(error?.localizedDescription)")
             }
         }
     }
-    
-    
-    @IBAction func onSignUp(_ sender: Any) {
-        
-    }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
     
 
     /*
