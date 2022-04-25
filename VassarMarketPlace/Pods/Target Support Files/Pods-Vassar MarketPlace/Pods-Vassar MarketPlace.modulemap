@@ -1,0 +1,6 @@
+framework module Pods_Vassar_MarketPlace {
+  umbrella header "Pods-Vassar MarketPlace-umbrella.h"
+
+  export *
+  module * { export * }
+}

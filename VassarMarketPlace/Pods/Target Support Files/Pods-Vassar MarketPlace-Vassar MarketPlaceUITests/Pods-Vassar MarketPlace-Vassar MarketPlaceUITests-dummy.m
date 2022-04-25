@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Vassar_MarketPlace_Vassar_MarketPlaceUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Vassar_MarketPlace_Vassar_MarketPlaceUITests
+@end
