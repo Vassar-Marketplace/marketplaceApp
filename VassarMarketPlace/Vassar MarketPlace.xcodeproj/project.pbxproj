@@ -24,6 +24,7 @@
 		6DD58270280E188D005DF3CA /* Vassar_MarketPlaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD5826F280E188D005DF3CA /* Vassar_MarketPlaceUITests.swift */; };
 		6DD58272280E188D005DF3CA /* Vassar_MarketPlaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD58271280E188D005DF3CA /* Vassar_MarketPlaceUITestsLaunchTests.swift */; };
 		6DD5827F280E1B56005DF3CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD5827E280E1B56005DF3CA /* LoginViewController.swift */; };
+		E27973F7281CC59500AFEA74 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27973F6281CC59500AFEA74 /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		AF46D00E2974652E1E168B02 /* Pods-Vassar MarketPlaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vassar MarketPlaceTests.debug.xcconfig"; path = "Target Support Files/Pods-Vassar MarketPlaceTests/Pods-Vassar MarketPlaceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9E2F9FDB821879E03C0F59E /* Pods-Vassar MarketPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vassar MarketPlace.release.xcconfig"; path = "Target Support Files/Pods-Vassar MarketPlace/Pods-Vassar MarketPlace.release.xcconfig"; sourceTree = "<group>"; };
 		E1E64235705301A7BF6B445E /* Pods_Vassar_MarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vassar_MarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E27973F6281CC59500AFEA74 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		E3126C75D7F6843177D12212 /* Pods-Vassar MarketPlace-Vassar MarketPlaceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vassar MarketPlace-Vassar MarketPlaceUITests.release.xcconfig"; path = "Target Support Files/Pods-Vassar MarketPlace-Vassar MarketPlaceUITests/Pods-Vassar MarketPlace-Vassar MarketPlaceUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 				6DBB28612814D61F0062E9EB /* SignUp.storyboard */,
 				6DBB28632814D6750062E9EB /* SignUpViewController.swift */,
 				6DBB28652814DE8D0062E9EB /* FeedView.storyboard */,
+				E27973F6281CC59500AFEA74 /* PostCell.swift */,
 				6DBB28672814DEA10062E9EB /* FeedViewViewController.swift */,
 			);
 			path = "Vassar MarketPlace";
@@ -423,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E27973F7281CC59500AFEA74 /* PostCell.swift in Sources */,
 				6DD5827F280E1B56005DF3CA /* LoginViewController.swift in Sources */,
 				6DBB28682814DEA10062E9EB /* FeedViewViewController.swift in Sources */,
 				6DD58253280E188C005DF3CA /* ViewController.swift in Sources */,
