@@ -196,4 +196,4 @@ let user = PFUser()
 
 
 Gif of part 2:
-<img src="" width=800><br>
+<img src="marketplaceApp/Simulator Screen Recording - iPhone 13 Pro Max - 2022-05-01 at 19.44.01.gif" width=800><br>
