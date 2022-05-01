@@ -25,6 +25,7 @@
 		6DD58272280E188D005DF3CA /* Vassar_MarketPlaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD58271280E188D005DF3CA /* Vassar_MarketPlaceUITestsLaunchTests.swift */; };
 		6DD5827F280E1B56005DF3CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD5827E280E1B56005DF3CA /* LoginViewController.swift */; };
 		E27973F7281CC59500AFEA74 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27973F6281CC59500AFEA74 /* PostCell.swift */; };
+		E27973F9281DFFC400AFEA74 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27973F8281DFFC400AFEA74 /* ProfileViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		D9E2F9FDB821879E03C0F59E /* Pods-Vassar MarketPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vassar MarketPlace.release.xcconfig"; path = "Target Support Files/Pods-Vassar MarketPlace/Pods-Vassar MarketPlace.release.xcconfig"; sourceTree = "<group>"; };
 		E1E64235705301A7BF6B445E /* Pods_Vassar_MarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vassar_MarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E27973F6281CC59500AFEA74 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		E27973F8281DFFC400AFEA74 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 		E3126C75D7F6843177D12212 /* Pods-Vassar MarketPlace-Vassar MarketPlaceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vassar MarketPlace-Vassar MarketPlaceUITests.release.xcconfig"; path = "Target Support Files/Pods-Vassar MarketPlace-Vassar MarketPlaceUITests/Pods-Vassar MarketPlace-Vassar MarketPlaceUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				6DBB28652814DE8D0062E9EB /* FeedView.storyboard */,
 				E27973F6281CC59500AFEA74 /* PostCell.swift */,
 				6DBB28672814DEA10062E9EB /* FeedViewViewController.swift */,
+				E27973F8281DFFC400AFEA74 /* ProfileViewController.storyboard */,
 			);
 			path = "Vassar MarketPlace";
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			files = (
 				6DD5825B280E188D005DF3CA /* LaunchScreen.storyboard in Resources */,
 				6DD58258280E188D005DF3CA /* Assets.xcassets in Resources */,
+				E27973F9281DFFC400AFEA74 /* ProfileViewController.storyboard in Resources */,
 				6DBB28662814DE8D0062E9EB /* FeedView.storyboard in Resources */,
 				6DBB28622814D61F0062E9EB /* SignUp.storyboard in Resources */,
 				6DD58256280E188C005DF3CA /* Main.storyboard in Resources */,

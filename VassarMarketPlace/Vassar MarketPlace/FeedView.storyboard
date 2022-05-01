@@ -20,8 +20,12 @@
                                 <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Items for Sale" id="u4i-7N-DSb">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="33E-md-1ni"/>
+                                    <navigationItem title="Marketplace" id="u4i-7N-DSb">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="33E-md-1ni">
+                                            <connections>
+                                                <action selector="onLogout:" destination="Y6W-OH-hqX" id="AOw-Wt-GVM"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="camera" catalog="system" id="akv-Kx-L9l"/>
                                     </navigationItem>
                                 </items>
@@ -97,6 +101,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="E35-5g-nUc" id="57h-Hm-Vk5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
