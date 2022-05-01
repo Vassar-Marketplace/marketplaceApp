@@ -21,24 +21,24 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
         
-        if indexPath.row == 0 {
-            let user = post["usernameLabel"] as! PFUser
-            cell.usernameLabel.text = user.username
+        let user = post["usernameLabel"] as! PFUser
+        cell.usernameLabel.text = user.username
 
-            cell.itemDescription.text = post["itemDescription"] as? String
+        cell.itemDescription.text = post["itemDescription"] as? String
 
-            let imageFile = post["itemImage"] as! PFFileObject
-            let urlString = imageFile.url!
-            let url = URL(string: urlString)!
+        let imageFile = post["itemImage"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+        
+        let profilePic = post["UserProfilePic"] as! PFFileObject
+        let picString = profilePic.url!
+        let picUrl = URL(string: picString)!
 
-            cell.itemImage.af.setImage(withURL: url)
+        cell.itemImage.af.setImage(withURL: url)
+        cell.itemImage.af.setImage(withURL: picUrl)
 
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
-            
-            return cell
-        }
+        return cell
+       
     }
     
     
