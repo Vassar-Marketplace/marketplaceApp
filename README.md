@@ -193,4 +193,7 @@ let user = PFUser()
     - (Read/GET) User messages
     - (Update/PUT) Update conversation between users
     - (Create) A new message
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+
+Gif of part 2:
+<img src="" width=800><br>
