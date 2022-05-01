@@ -11,8 +11,42 @@ import AlamofireImage
 
 class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    var posts = [PFObject]()
+    var selectedPost: PFObject!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        
+        // user can dismiss keyboard by pulling down
+        tableView.keyboardDismissMode = .interactive
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let query = PFQuery(className: "Posts")
+        query.includeKeys(["userName"])
+        query.limit = 40
+        
+        query.findObjectsInBackground { (posts, error) in
+            if posts != nil {
+                self.posts = posts!
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return posts.count
     }
     
     
@@ -41,38 +75,15 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
        
     }
     
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    var posts = [PFObject]()
-    var selectedPost: PFObject!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        tableView.delegate = self
-        tableView.dataSource = self
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
         
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                let delegate = windowScene.delegate as? SceneDelegate else { return }
         
-        // user can dismiss keyboard by pulling down
-        tableView.keyboardDismissMode = .interactive
-        
-        // Do any additional setup after loading the view.
+        delegate.window?.rootViewController = loginViewController
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let query = PFQuery(className: "Posts")
-        query.includeKeys(["author", "comments", "comments.author"])
-        query.limit = 40
-        
-        query.findObjectsInBackground { (posts, error) in
-            if posts != nil {
-                self.posts = posts!
-                self.tableView.reloadData()
-            }
-        }
-    }
-
 }

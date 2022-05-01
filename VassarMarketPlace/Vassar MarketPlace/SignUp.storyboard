@@ -59,7 +59,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onSignUp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BNF-ph-B4M"/>
-                                    <segue destination="cC7-lH-zIc" kind="show" identifier="FeedView" id="Sut-u4-aox"/>
+                                    <segue destination="cC7-lH-zIc" kind="show" identifier="CreateProfile" id="Sut-u4-aox"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,7 +103,7 @@
         <!--FeedView-->
         <scene sceneID="LkS-cY-sW0">
             <objects>
-                <viewControllerPlaceholder storyboardName="FeedView" id="cC7-lH-zIc" userLabel="FeedView" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CreateProfile" id="cC7-lH-zIc" userLabel="FeedView" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="C2h-GE-XbN"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BbD-m4-3Ex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
