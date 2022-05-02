@@ -25,8 +25,8 @@ This is an app for Vassar students to sell items to other Vassar students to kee
 
 **Required Must-have Stories**
 
-[x] User can log in
-[x] User can sign up
+- [X] User can log in
+- [X] User can sign up
 * User can view an array of items for sale
 * User can add an item to sell
 * User can click on an item 
