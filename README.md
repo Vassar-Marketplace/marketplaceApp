@@ -195,5 +195,9 @@ let user = PFUser()
     - (Create) A new message
 
 
+Part 2 use cases:
+[X] - User is directed to "CreateProfile" screen and click "Done"
+[X] - User can logout
+
 Gif of part 2:
 <img src="Simulator Screen Recording - iPhone 13 Pro Max - 2022-05-01 at 19.44.01.gif" width=800><br>
