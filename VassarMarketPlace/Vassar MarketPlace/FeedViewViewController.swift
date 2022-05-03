@@ -60,6 +60,9 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         cell.itemDescription.text = post["itemDescription"] as? String
         
         cell.itemPrice.text = post["itemPrice"] as? String
+        
+        
+        
         if let imageFile = post["itemImage"] as? PFFileObject {
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
@@ -75,18 +78,19 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! UITableViewCell
-        let indexPath = tableView.indexPath(for: cell)
+        
+        let postCell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: postCell)
         let post = posts[indexPath!.row]
         
         let user = post["user"] as! PFUser
-        print(user.objectId ?? "hiya")
-        let userID = user["objectId"] as! String
+        
+        let username = user.objectId!
         // Pass the selected object to the new view controller.
         
         let DestinationVC = segue.destination as!
             ProfileViewController
-        DestinationVC.userID = userID
+        DestinationVC.userID = username as! String
         
         tableView.deselectRow(at: indexPath!, animated: true)
     }

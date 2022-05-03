@@ -137,6 +137,7 @@
                                             <outlet property="itemDescription" destination="JlJ-V1-lNS" id="iFD-ca-Vmd"/>
                                             <outlet property="itemImage" destination="xHP-GN-tTQ" id="Ro7-Ew-T0g"/>
                                             <outlet property="itemPrice" destination="bzd-vB-hKr" id="yQ8-Sx-0Lh"/>
+                                            <outlet property="postCell" destination="a2E-mX-cnx" id="NYe-AQ-CrM"/>
                                             <outlet property="userProfilePic" destination="Qvv-F8-uoU" id="7tH-HF-Q5F"/>
                                             <outlet property="usernameLabel" destination="p3e-NF-AGa" id="lZD-0j-1PB"/>
                                             <segue destination="eY8-Ed-Frq" kind="presentation" identifier="profileViewSegue" id="eFM-ol-ZLr"/>
