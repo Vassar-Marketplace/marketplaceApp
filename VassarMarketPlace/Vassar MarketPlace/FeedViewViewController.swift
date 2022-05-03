@@ -75,11 +75,16 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if  segue.identifier == "profileViewSegue" {
-            let destinationVC = segue.destination as! ProfileViewController
-//            destinationVC.userID =
-        }
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)
+        let post = posts[indexPath!.row]
+        // Pass the selected object to the new view controller.
         
+        let DestinationVC = segue.destination as!
+            ProfileViewController
+        DestinationVC.userID = post["user"] as? String ?? ""
+        
+        tableView.deselectRow(at: indexPath!, animated: true)
     }
     
     @IBAction func onLogout(_ sender: Any) {
