@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var profileUsername: UILabel!
     @IBOutlet weak var paymentMethods: UILabel!
     
+    var userID: String = ""
+    
     var listings = [[String:Any]]()
     
     var numFollowers = 0
@@ -33,22 +35,19 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
         layout.itemSize = CGSize(width: width, height: width * 3 / 2)
 
-        let url = URL(string: "https://api.themoviedb.org/3/movie/297762/similar?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US&page=1")!
-
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task = session.dataTask(with: request){ (data, response, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let data = data {
-                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-                self.listings = dataDictionary["results"] as! [[String:Any]]
-                
-                self.collectionView.reloadData()
-            }
+        
+        let query = PFQuery(className:"Posts")
+        
+        query.whereKey("user", equalTo: userID)
+        
+        do {
+            let results = try query.findObjects()
+            self.listings = results as! [[String:Any]]
+            self.collectionView.reloadData()
         }
-
-        task.resume()
+        catch {
+            
+        }
         
     }
     
@@ -70,11 +69,11 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let listing = listings[indexPath.item]
         
-        let baseUrl = "https://image.tmdb.org/t/p/w185"
-        let posterPath = listing["poster_path"] as! String
-        let listingUrl = URL(string: baseUrl + posterPath)
-        
-        cell.listingView.af.setImage(withURL: listingUrl!)
+        if let imageFile = listing["itemImage"] as? PFFileObject {
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            cell.listingView.af.setImage(withURL: url)
+        }
         
         return cell
     }

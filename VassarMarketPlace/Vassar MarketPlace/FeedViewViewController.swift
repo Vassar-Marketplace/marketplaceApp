@@ -60,7 +60,6 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         cell.itemDescription.text = post["itemDescription"] as? String
         
         cell.itemPrice.text = post["itemPrice"] as? String
-
         if let imageFile = post["itemImage"] as? PFFileObject {
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
@@ -73,7 +72,14 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
             cell.itemImage.af.setImage(withURL: picUrl)
         }
         return cell
-       
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "profileViewSegue" {
+            let destinationVC = segue.destination as! ProfileViewController
+//            destinationVC.userID =
+        }
+        
     }
     
     @IBAction func onLogout(_ sender: Any) {

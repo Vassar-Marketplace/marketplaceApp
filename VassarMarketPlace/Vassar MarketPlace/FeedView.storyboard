@@ -104,7 +104,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-El-qj2">
+                                                <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="profileButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-El-qj2">
                                                     <rect key="frame" x="134" y="430" width="160" height="51"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="Dte-bf-KrG"/>
@@ -113,7 +113,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="tinted" title="View Profile"/>
                                                     <connections>
-                                                        <segue destination="eY8-Ed-Frq" kind="presentation" id="IEh-rF-YrN"/>
+                                                        <segue destination="eY8-Ed-Frq" kind="presentation" identifier="profileViewSegue" id="IEh-rF-YrN"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlJ-V1-lNS">
