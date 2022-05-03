@@ -66,7 +66,7 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
             cell.itemImage.af.setImage(withURL: url)
         }
         
-        if let profilePic = post["UserProfilePic"] as? PFFileObject {
+        if let profilePic = post["userProfilePic"] as? PFFileObject {
             let picString = profilePic.url!
             let picUrl = URL(string: picString)!
             cell.itemImage.af.setImage(withURL: picUrl)
@@ -78,11 +78,15 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)
         let post = posts[indexPath!.row]
+        
+        let user = post["user"] as! PFUser
+        print(user.objectId ?? "hiya")
+        let userID = user["objectId"] as! String
         // Pass the selected object to the new view controller.
         
         let DestinationVC = segue.destination as!
             ProfileViewController
-        DestinationVC.userID = post["user"] as? String ?? ""
+        DestinationVC.userID = userID
         
         tableView.deselectRow(at: indexPath!, animated: true)
     }
