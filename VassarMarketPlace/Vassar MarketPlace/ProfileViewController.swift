@@ -36,15 +36,14 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
         layout.itemSize = CGSize(width: width, height: width * 3 / 2)
-
         
         let query = PFQuery(className:"Posts")
-        query.whereKey("userId", equalTo: userID)
+        query.whereKey("objectId", equalTo: userID)
         
         do {
             let results = try query.findObjects()
             self.listings = results as! [[String:Any]]
-            
+
             profileUsername.text = username as String
             paymentMethods.text = payment as String
             
@@ -59,7 +58,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBAction func onFollow(_ sender: Any) {
         numFollowers += 1
     }
-    
     
     @IBAction func onMessage(_ sender: Any) {
         
@@ -77,12 +75,26 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         if let imageFile = listing["itemImage"] as? PFFileObject {
             print(imageFile)
             let urlString = imageFile.url!
+            
+            print(urlString)
+            
             let url = URL(string: urlString)!
             cell.listingView.af.setImage(withURL: url)
         }
-        
         return cell
     }
     
+    
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                let delegate = windowScene.delegate as? SceneDelegate else { return }
+        
+        delegate.window?.rootViewController = loginViewController
+    }
+
     
 }

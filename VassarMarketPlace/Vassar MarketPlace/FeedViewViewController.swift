@@ -33,7 +33,7 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let query = PFQuery(className: "Posts")
         query.includeKeys(["user"])
-        query.limit = 40
+        query.limit = 100
         
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
@@ -70,12 +70,12 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         if let profilePic = post["userProfilePic"] as? PFFileObject {
             let picString = profilePic.url!
             let picUrl = URL(string: picString)!
-            cell.itemImage.af.setImage(withURL: picUrl)
+            cell.userProfilePic.af.setImage(withURL: picUrl)
         }
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         
         let postCell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: postCell)
@@ -85,14 +85,15 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let userId = user.objectId!
         let username = user.username!
+        let payment = user["payment"] as! String
+        let profilePic = user["profilePic"]
         
         let DestinationVC = segue.destination as!
             ProfileViewController
         DestinationVC.userID = userId
         DestinationVC.username = username
-        DestinationVC.payment = ""
-        
-        
+        DestinationVC.payment = payment
+        DestinationVC.userProfilePic = profilePic as? UIImageView
         
         tableView.deselectRow(at: indexPath!, animated: true)
     }
