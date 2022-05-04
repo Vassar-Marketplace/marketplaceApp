@@ -17,6 +17,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var paymentMethods: UILabel!
     
     var userID: String = ""
+    var username: String = ""
+    var payment: String = ""
     
     var listings = [[String:Any]]()
     
@@ -24,7 +26,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         collectionView.delegate = self
         collectionView.dataSource = self
 
@@ -37,12 +39,15 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
 
         
         let query = PFQuery(className:"Posts")
-        
-        query.whereKey("user", equalTo: userID)
+        query.whereKey("userId", equalTo: userID)
         
         do {
             let results = try query.findObjects()
             self.listings = results as! [[String:Any]]
+            
+            profileUsername.text = username as String
+            paymentMethods.text = payment as String
+            
             self.collectionView.reloadData()
         }
         catch {
@@ -70,6 +75,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         let listing = listings[indexPath.item]
         
         if let imageFile = listing["itemImage"] as? PFFileObject {
+            print(imageFile)
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
             cell.listingView.af.setImage(withURL: url)

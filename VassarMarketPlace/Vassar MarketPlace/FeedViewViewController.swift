@@ -51,17 +51,15 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.section]
-        print(post)
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
         
         let user = post["user"] as! PFUser
+        
         cell.usernameLabel.text = user.username
 
         cell.itemDescription.text = post["itemDescription"] as? String
         
         cell.itemPrice.text = post["itemPrice"] as? String
-        
-        
         
         if let imageFile = post["itemImage"] as? PFFileObject {
             let urlString = imageFile.url!
@@ -85,12 +83,16 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let user = post["user"] as! PFUser
         
-        let username = user.objectId!
-        // Pass the selected object to the new view controller.
+        let userId = user.objectId!
+        let username = user.username!
         
         let DestinationVC = segue.destination as!
             ProfileViewController
-        DestinationVC.userID = username as! String
+        DestinationVC.userID = userId
+        DestinationVC.username = username
+        DestinationVC.payment = ""
+        
+        
         
         tableView.deselectRow(at: indexPath!, animated: true)
     }
