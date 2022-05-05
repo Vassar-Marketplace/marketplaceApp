@@ -18,10 +18,22 @@
             </objects>
             <point key="canvasLocation" x="694" y="94"/>
         </scene>
+        <!--CameraViewController-->
+        <scene sceneID="Qyn-pU-UvR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CameraViewController" id="CdW-iM-mkD" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="e8q-EM-xdG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fui-Ux-EhD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="-249"/>
+        </scene>
         <!--Main-->
         <scene sceneID="cMY-Ns-iLF">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="S4E-AZ-Shv" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="S4E-AZ-Shv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="57D-Nk-ciR"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCL-nv-nUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="554" y="-213"/>
@@ -46,10 +58,14 @@
                                         <barButtonItem key="leftBarButtonItem" title="Logout" id="33E-md-1ni">
                                             <connections>
                                                 <action selector="onLogout:" destination="Y6W-OH-hqX" id="Ptt-4w-ObB"/>
-                                                <segue destination="S4E-AZ-Shv" kind="presentation" id="W3R-my-ZNe"/>
+                                                <segue destination="S4E-AZ-Shv" kind="show" id="W3R-my-ZNe"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="camera" catalog="system" id="akv-Kx-L9l"/>
+                                        <barButtonItem key="rightBarButtonItem" image="camera" catalog="system" id="akv-Kx-L9l">
+                                            <connections>
+                                                <segue destination="CdW-iM-mkD" kind="show" id="YBH-lP-w6F"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -140,7 +156,7 @@
                                             <outlet property="postCell" destination="a2E-mX-cnx" id="NYe-AQ-CrM"/>
                                             <outlet property="userProfilePic" destination="Qvv-F8-uoU" id="7tH-HF-Q5F"/>
                                             <outlet property="usernameLabel" destination="p3e-NF-AGa" id="lZD-0j-1PB"/>
-                                            <segue destination="eY8-Ed-Frq" kind="presentation" identifier="profileViewSegue" id="eFM-ol-ZLr"/>
+                                            <segue destination="eY8-Ed-Frq" kind="show" identifier="profileViewSegue" id="eFM-ol-ZLr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

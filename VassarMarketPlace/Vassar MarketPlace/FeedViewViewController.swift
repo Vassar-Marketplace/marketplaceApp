@@ -77,7 +77,7 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         
-        if segue.identifier == "ShowCounterSegue"
+        if segue.identifier == "profileViewSegue"
         {
             let postCell = sender as! UITableViewCell
             let indexPath = tableView.indexPath(for: postCell)
