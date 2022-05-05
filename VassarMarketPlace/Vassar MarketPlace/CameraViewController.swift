@@ -11,15 +11,28 @@ import AlamofireImage
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
     @IBOutlet weak var addedItem: UIImageView!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+    }
+    
+    @IBAction func onCameraButton(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
         
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
+        present(picker, animated: true, completion: nil)
     }
     
     @IBAction func onSubmit(_ sender: Any) {
