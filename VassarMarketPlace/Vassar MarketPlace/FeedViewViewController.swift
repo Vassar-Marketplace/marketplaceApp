@@ -77,25 +77,29 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         
-        let postCell = sender as! UITableViewCell
-        let indexPath = tableView.indexPath(for: postCell)
-        let post = posts[indexPath!.row]
+        if segue.identifier == "ShowCounterSegue"
+        {
+            let postCell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: postCell)
+            let post = posts[indexPath!.row]
+            
+            let user = post["user"] as! PFUser
+            
+            let userId = user.objectId!
+            let username = user.username!
+            let payment = user["payment"] as! String
+            let profilePic = user["profilePic"]
+            
+            let DestinationVC = segue.destination as!
+                ProfileViewController
+            DestinationVC.userID = userId
+            DestinationVC.username = username
+            DestinationVC.payment = payment
+            DestinationVC.userProfilePic = profilePic as? UIImageView
         
-        let user = post["user"] as! PFUser
-        
-        let userId = user.objectId!
-        let username = user.username!
-        let payment = user["payment"] as! String
-        let profilePic = user["profilePic"]
-        
-        let DestinationVC = segue.destination as!
-            ProfileViewController
-        DestinationVC.userID = userId
-        DestinationVC.username = username
-        DestinationVC.payment = payment
-        DestinationVC.userProfilePic = profilePic as? UIImageView
-        
-        tableView.deselectRow(at: indexPath!, animated: true)
+            tableView.deselectRow(at: indexPath!, animated: true)
+            
+        }
     }
     
     @IBAction func onLogout(_ sender: Any) {
