@@ -32,7 +32,7 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         super.viewDidAppear(animated)
         
         let query = PFQuery(className: "Posts")
-        query.includeKeys(["user"])
+        query.includeKeys(["user", "itemDescription", "itemPrice", "itemImage", "userProfilePic"])
         query.limit = 100
         
         query.findObjectsInBackground { (posts, error) in
@@ -44,10 +44,13 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.section]
@@ -55,7 +58,7 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let user = post["user"] as! PFUser
         
-        cell.usernameLabel.text = user.username
+        cell.usernameLabel.text = user["name"] as? String
 
         cell.itemDescription.text = post["itemDescription"] as? String
         
@@ -86,15 +89,15 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
             let user = post["user"] as! PFUser
             
             let userId = user.objectId!
-            let username = user.username!
-            let payment = user["payment"] as! String
+            let name = user["name"] as? String
+            let payment = user["payment"] as? String
             let profilePic = user["profilePic"]
             
             let DestinationVC = segue.destination as!
                 ProfileViewController
             DestinationVC.userID = userId
-            DestinationVC.username = username
-            DestinationVC.payment = payment
+            DestinationVC.name = name ?? ""
+            DestinationVC.payment = payment ?? ""
             DestinationVC.userProfilePic = profilePic as? UIImageView
         
             tableView.deselectRow(at: indexPath!, animated: true)

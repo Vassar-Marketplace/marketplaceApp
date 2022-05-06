@@ -147,7 +147,7 @@
                     <connections>
                         <outlet property="collectionView" destination="j8B-by-spO" id="fwJ-1s-MRe"/>
                         <outlet property="paymentMethods" destination="2RF-iS-gf0" id="3So-ac-7SM"/>
-                        <outlet property="profileUsername" destination="KKu-uI-t9O" id="7UV-Lt-lns"/>
+                        <outlet property="profileName" destination="KKu-uI-t9O" id="2eY-VH-UaU"/>
                         <outlet property="userProfilePic" destination="szc-Zk-WKQ" id="Wzy-nE-ZYn"/>
                     </connections>
                 </viewController>

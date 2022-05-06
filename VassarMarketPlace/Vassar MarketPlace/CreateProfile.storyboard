@@ -38,7 +38,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Done"/>
                                 <connections>
                                     <action selector="onDoneButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ngm-Is-BaE"/>
-                                    <segue destination="hT3-E3-VKr" kind="presentation" id="3wN-6f-tt1"/>
+                                    <segue destination="hT3-E3-VKr" kind="show" identifier="profileToFeedView" id="3wN-6f-tt1"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4jO-vC-s4m">
@@ -124,7 +124,9 @@
         <!--FeedView-->
         <scene sceneID="k0t-lo-psy">
             <objects>
-                <viewControllerPlaceholder storyboardName="FeedView" id="hT3-E3-VKr" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="FeedView" id="hT3-E3-VKr" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ri9-4L-OjZ"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrL-TO-JNm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="724" y="36"/>

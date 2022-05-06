@@ -13,11 +13,11 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var userProfilePic: UIImageView!
-    @IBOutlet weak var profileUsername: UILabel!
+    @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var paymentMethods: UILabel!
     
     var userID: String = ""
-    var username: String = ""
+    var name: String = ""
     var payment: String = ""
     
     var listings = [[String:Any]]()
@@ -37,14 +37,14 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
         layout.itemSize = CGSize(width: width, height: width * 3 / 2)
         
-        let query = PFQuery(className:"Posts")
+        let query = PFQuery(className: "Posts")
         query.whereKey("objectId", equalTo: userID)
         
         do {
             let results = try query.findObjects()
             self.listings = results as! [[String:Any]]
 
-            profileUsername.text = username as String
+            profileName.text = name as String
             paymentMethods.text = payment as String
             
             self.collectionView.reloadData()

@@ -11,6 +11,9 @@ import Parse
 
 class CreateProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var user: PFUser = PFUser.current()!
+    
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func onCameraButton(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -35,21 +38,27 @@ class CreateProfileViewController: UIViewController, UIImagePickerControllerDele
         post["Name"] = nameField.text
         post["User"] = PFUser.current()!
         post["Payment"] = paymentField.text
+        user["payment"] = paymentField.text
+        user["name"] = nameField.text
+        
         
         let imageData = imageView.image?.pngData()
         let file = PFFileObject(name: "image.png", data: imageData!)
         
         post["ProfilePic"] = file
+        user["profilePic"] = file
         
         post.saveInBackground{ (success,error) in
             if success{
                 self.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "profileToFeedView", sender: nil)
                 print("saved!")
             } else{
                 print("error!")
             }
             
         }
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
