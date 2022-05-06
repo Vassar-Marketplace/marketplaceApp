@@ -21,6 +21,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
+   
     @IBAction func onCameraButton(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -35,6 +36,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(picker, animated: true, completion: nil)
     }
     
+    
     @IBAction func onSubmit(_ sender: Any) {
         let post = PFObject(className: "Posts")
 
@@ -44,9 +46,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
 
         let imageData = addedItem.image!.pngData()
 
-        let file = PFFileObject(name: "image.png", data: imageData!)
+        let file = PFFileObject(name: "itemImage", data: imageData!)
         
-        post["image"] = file
+        post["itemImage"] = file
         
         post.saveInBackground { (success, error) in
             if success {
