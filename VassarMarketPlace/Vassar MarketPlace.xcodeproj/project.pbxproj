@@ -10,6 +10,7 @@
 		1DB83CEBFC33B68AD500C95F /* Pods_Vassar_MarketPlace_Vassar_MarketPlaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6874E327B3D5C7D9676308F4 /* Pods_Vassar_MarketPlace_Vassar_MarketPlaceUITests.framework */; };
 		3A0BBFD24364D4C9A872CCB3 /* Pods_Vassar_MarketPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E64235705301A7BF6B445E /* Pods_Vassar_MarketPlace.framework */; };
 		3FCDC866500223EE3E594DBA /* Pods_Vassar_MarketPlaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F42ABB843A5B5B80423721E /* Pods_Vassar_MarketPlaceTests.framework */; };
+		6D01BEBA28258FC5000D28E9 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01BEB928258FC5000D28E9 /* CreateProfileViewController.swift */; };
 		6DBB28622814D61F0062E9EB /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB28612814D61F0062E9EB /* SignUp.storyboard */; };
 		6DBB28642814D6750062E9EB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB28632814D6750062E9EB /* SignUpViewController.swift */; };
 		6DBB28662814DE8D0062E9EB /* FeedView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB28652814DE8D0062E9EB /* FeedView.storyboard */; };
@@ -55,6 +56,7 @@
 		108AB15176D5B6B0D7BC9ED4 /* Pods-Vassar MarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vassar MarketPlace.debug.xcconfig"; path = "Target Support Files/Pods-Vassar MarketPlace/Pods-Vassar MarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		4F42ABB843A5B5B80423721E /* Pods_Vassar_MarketPlaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vassar_MarketPlaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6874E327B3D5C7D9676308F4 /* Pods_Vassar_MarketPlace_Vassar_MarketPlaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vassar_MarketPlace_Vassar_MarketPlaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D01BEB928258FC5000D28E9 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		6DBB28612814D61F0062E9EB /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		6DBB28632814D6750062E9EB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6DBB28652814DE8D0062E9EB /* FeedView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedView.storyboard; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				E27973FC281F2C3A00AFEA74 /* ProfileViewController.swift */,
 				E2797400281F323500AFEA74 /* ListingCell.swift */,
 				E2797404281F3EC500AFEA74 /* CreateProfile.storyboard */,
+				6D01BEB928258FC5000D28E9 /* CreateProfileViewController.swift */,
 			);
 			path = "Vassar MarketPlace";
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				E27973F7281CC59500AFEA74 /* PostCell.swift in Sources */,
 				E2C0658928243495001354A0 /* CameraViewController.swift in Sources */,
 				6DD5827F280E1B56005DF3CA /* LoginViewController.swift in Sources */,
+				6D01BEBA28258FC5000D28E9 /* CreateProfileViewController.swift in Sources */,
 				6DBB28682814DEA10062E9EB /* FeedViewViewController.swift in Sources */,
 				E2797401281F323500AFEA74 /* ListingCell.swift in Sources */,
 				6DD58253280E188C005DF3CA /* ViewController.swift in Sources */,
