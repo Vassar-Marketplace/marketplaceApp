@@ -37,6 +37,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Done"/>
                                 <connections>
+                                    <action selector="onDoneButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ngm-Is-BaE"/>
                                     <segue destination="hT3-E3-VKr" kind="presentation" id="3wN-6f-tt1"/>
                                 </connections>
                             </button>
@@ -56,6 +57,9 @@
                                 <rect key="frame" x="48" y="119" width="320" height="271"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="onCameraButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KCy-HL-Jrx"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSE-cv-m8u">
                                 <rect key="frame" x="92" y="431" width="290" height="34"/>
@@ -107,6 +111,11 @@
                             <constraint firstItem="3Sb-rF-eJg" firstAttribute="top" secondItem="MSE-cv-m8u" secondAttribute="bottom" constant="34" id="zwf-QS-bKp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="4jO-vC-s4m" id="iK1-p4-VW3"/>
+                        <outlet property="nameField" destination="MSE-cv-m8u" id="22L-7V-6Lw"/>
+                        <outlet property="paymentField" destination="3Sb-rF-eJg" id="sND-yJ-fc8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

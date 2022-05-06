@@ -6,9 +6,66 @@
 //
 
 import UIKit
+import AlamofireImage
+import Parse
 
-class CreateProfileViewController: UIViewController {
+class CreateProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBAction func onCameraButton(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.sourceType = .camera
+        } else{
+            picker.sourceType = .photoLibrary
+        }
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var paymentField: UITextField!
+    
+    @IBAction func onDoneButton(_ sender: Any) {
+        let post = PFObject(className: "Profile")
+        
+        post["Name"] = nameField.text
+        post["User"] = PFUser.current()!
+        post["Payment"] = paymentField.text
+        
+        let imageData = imageView.image?.pngData()
+        let file = PFFileObject(name: "image.png", data: imageData!)
+        
+        post["ProfilePic"] = file
+        
+        post.saveInBackground{ (success,error) in
+            if success{
+                self.dismiss(animated: true, completion: nil)
+                print("saved!")
+            } else{
+                print("error!")
+            }
+            
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] as! UIImage
+        
+        let size = CGSize(width: 100, height: 100)
+        let scaledImage = image.af_imageAspectScaled(toFill: size)
+        
+        imageView.image = scaledImage
+        
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
