@@ -202,3 +202,12 @@ Part 2 use cases:
 
 Gif of part 2:
 <img src="Simulator Screen Recording - iPhone 13 Pro Max - 2022-05-01 at 19.44.01.gif" width=800><br>
+
+Part 3 and 4 use cases:
+
+- [ ] User can create a profile
+- [ ] User can view a listing of posts
+- [ ] User can post their own item
+- [ ] User can view another person's profile
+
+<img src="" width=800><br>
