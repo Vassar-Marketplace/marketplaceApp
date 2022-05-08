@@ -205,9 +205,9 @@ Gif of part 2:
 
 Part 3 and 4 use cases:
 
-- [ ] User can create a profile
-- [ ] User can view a listing of posts
-- [ ] User can post their own item
-- [ ] User can view another person's profile
+- [x] User can create a profile
+- [x] User can view a listing of posts
+- [x] User can post their own item
+- [x] User can view another person's profile
 
 <img src="" width=800><br>
