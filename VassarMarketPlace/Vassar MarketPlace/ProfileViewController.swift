@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     var name: String = ""
     var payment: String = ""
     
+    var profilePic: PFFileObject? = nil
+    
     var listings = [[String:Any]]()
     
     var numFollowers = 0

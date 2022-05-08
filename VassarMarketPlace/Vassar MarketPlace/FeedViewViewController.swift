@@ -70,11 +70,12 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
             cell.itemImage.af.setImage(withURL: url)
         }
         
-        if let profilePic = post["userProfilePic"] as? PFFileObject {
+        if let profilePic = user["profilePic"] as? PFFileObject {
             let picString = profilePic.url!
             let picUrl = URL(string: picString)!
             cell.userProfilePic.af.setImage(withURL: picUrl)
         }
+        
         return cell
     }
     
@@ -91,14 +92,15 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
             let userId = user.objectId!
             let name = user["name"] as? String
             let payment = user["payment"] as? String
-            let profilePic = user["profilePic"]
+            
+            
             
             let DestinationVC = segue.destination as!
                 ProfileViewController
             DestinationVC.userID = userId
             DestinationVC.name = name ?? ""
             DestinationVC.payment = payment ?? ""
-            DestinationVC.userProfilePic = profilePic as? UIImageView
+            DestinationVC.profilePic = user["profilePic"] as? PFFileObject
         
             tableView.deselectRow(at: indexPath!, animated: true)
         }

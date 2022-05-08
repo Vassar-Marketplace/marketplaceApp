@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -51,6 +51,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Submit"/>
                                 <connections>
                                     <action selector="onSubmit:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="i17-M3-SaZ"/>
+                                    <segue destination="vNu-nq-YHI" kind="show" id="NQc-17-gYO"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CameraLogo" translatesAutoresizingMaskIntoConstraints="NO" id="150-gY-DUJ">
@@ -84,6 +85,16 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="44.927536231884062" y="47.544642857142854"/>
+        </scene>
+        <!--FeedView-->
+        <scene sceneID="RgD-Uh-7qc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FeedView" id="vNu-nq-YHI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="v0c-Lc-rJi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="imx-aG-dSB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866" y="106"/>
         </scene>
         <!--Main-->
         <scene sceneID="d0a-ND-JIv">
