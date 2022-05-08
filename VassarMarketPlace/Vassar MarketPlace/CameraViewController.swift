@@ -20,7 +20,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
         
     }
-    
    
     @IBAction func onCameraButton(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -35,7 +34,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         present(picker, animated: true, completion: nil)
     }
-    
     
     @IBAction func onSubmit(_ sender: Any) {
         let post = PFObject(className: "Posts")

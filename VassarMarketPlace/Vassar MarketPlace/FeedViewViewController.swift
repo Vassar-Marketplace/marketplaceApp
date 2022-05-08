@@ -84,7 +84,7 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
         {
             let postCell = sender as! UITableViewCell
             let indexPath = tableView.indexPath(for: postCell)
-            let post = posts[indexPath!.row]
+            let post = posts[indexPath!.section]
             
             let user = post["user"] as! PFUser
             
@@ -101,7 +101,6 @@ class FeedViewViewController: UIViewController,UITableViewDelegate, UITableViewD
             DestinationVC.userProfilePic = profilePic as? UIImageView
         
             tableView.deselectRow(at: indexPath!, animated: true)
-            
         }
     }
     

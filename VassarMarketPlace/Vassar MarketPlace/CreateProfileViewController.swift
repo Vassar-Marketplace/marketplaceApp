@@ -33,22 +33,16 @@ class CreateProfileViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var paymentField: UITextField!
     
     @IBAction func onDoneButton(_ sender: Any) {
-        let post = PFObject(className: "Profile")
         
-        post["Name"] = nameField.text
-        post["User"] = PFUser.current()!
-        post["Payment"] = paymentField.text
         user["payment"] = paymentField.text
         user["name"] = nameField.text
-        
         
         let imageData = imageView.image?.pngData()
         let file = PFFileObject(name: "image.png", data: imageData!)
         
-        post["ProfilePic"] = file
         user["profilePic"] = file
         
-        post.saveInBackground{ (success,error) in
+        user.saveInBackground{ (success,error) in
             if success{
                 self.dismiss(animated: true, completion: nil)
                 self.performSegue(withIdentifier: "profileToFeedView", sender: nil)

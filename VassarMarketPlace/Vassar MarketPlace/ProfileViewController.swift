@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         layout.itemSize = CGSize(width: width, height: width * 3 / 2)
         
         let query = PFQuery(className: "Posts")
-        query.whereKey("objectId", equalTo: userID)
+        query.whereKey("user", equalTo: "user")
         
         do {
             let results = try query.findObjects()
@@ -73,11 +73,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         let listing = listings[indexPath.item]
         
         if let imageFile = listing["itemImage"] as? PFFileObject {
-            print(imageFile)
+            
             let urlString = imageFile.url!
-            
-            print(urlString)
-            
             let url = URL(string: urlString)!
             cell.listingView.af.setImage(withURL: url)
         }
