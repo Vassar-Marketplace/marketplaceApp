@@ -84,7 +84,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         return cell
     }
     
-    
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOut()
         
@@ -96,5 +95,4 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         delegate.window?.rootViewController = loginViewController
     }
 
-    
 }
