@@ -209,5 +209,6 @@ Part 3 and 4 use cases:
 - [x] User can view a listing of posts
 - [x] User can post their own item
 - [x] User can view another person's profile
+- [x] User can post their own profile pic
 
 <img src="" width=800><br>
