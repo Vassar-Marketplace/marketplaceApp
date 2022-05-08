@@ -211,4 +211,4 @@ Part 3 and 4 use cases:
 - [x] User can view another person's profile
 - [x] User can post their own profile pic
 
-<img src="Simulator Screen Recording - iPhone 13 Pro Max - 2022-05-01 at 19.44.01.gif" width=800><br>
+<img src="" width=800><br>
