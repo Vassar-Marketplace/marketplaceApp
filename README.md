@@ -205,7 +205,7 @@ Gif of part 2:
 
 Part 3 and 4 use cases:
 
-- [x] User can create a profile
+- [X] User can create a profile
 - [x] User can view a listing of posts
 - [x] User can post their own item
 - [x] User can view another person's profile
