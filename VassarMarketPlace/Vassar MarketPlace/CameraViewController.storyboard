@@ -51,7 +51,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Submit"/>
                                 <connections>
                                     <action selector="onSubmit:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="i17-M3-SaZ"/>
-                                    <segue destination="vNu-nq-YHI" kind="show" id="NQc-17-gYO"/>
+                                    <segue destination="vNu-nq-YHI" kind="show" identifier="feedSegue" id="NQc-17-gYO"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CameraLogo" translatesAutoresizingMaskIntoConstraints="NO" id="150-gY-DUJ">
