@@ -13,7 +13,6 @@ class CreateProfileViewController: UIViewController, UIImagePickerControllerDele
 
     var user: PFUser = PFUser.current()!
     
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func onCameraButton(_ sender: Any) {
         let picker = UIImagePickerController()

@@ -49,12 +49,15 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
             profileName.text = name as String
             paymentMethods.text = payment as String
             
+            let profilePicString = (profilePic?.url!)!
+            let profilePicUrl = URL(string: profilePicString)!
+            userProfilePic.af.setImage(withURL: profilePicUrl)
+            
             self.collectionView.reloadData()
         }
         catch {
             
         }
-        
     }
     
     @IBAction func onFollow(_ sender: Any) {

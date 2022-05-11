@@ -58,7 +58,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Logout" id="33E-md-1ni">
                                             <connections>
                                                 <action selector="onLogout:" destination="Y6W-OH-hqX" id="Ptt-4w-ObB"/>
-                                                <segue destination="S4E-AZ-Shv" kind="show" id="W3R-my-ZNe"/>
+                                                <segue destination="S4E-AZ-Shv" kind="showDetail" id="W3R-my-ZNe"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="camera" catalog="system" id="akv-Kx-L9l">
